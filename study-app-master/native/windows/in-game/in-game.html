@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="../../css/general.css" />
+    <link rel="stylesheet" href="../../css/header.css" />
+    <link rel="stylesheet" href="../../css/ingame.css" />
+    <link rel="stylesheet" href="../../css/modal.css" />
+    <title>Hovering Window</title>
+  </head>
+  <body class="in-game">
+    <!-- -------------------------------- Header ------------------------------- -->
+
+    <header class="app-header">
+      <img src="../../img/desktop-icon.png" />
+      <h1>Hovering Window</h1>
+      <div class="hotkey-text">
+        Show/Hide Hotkey:
+        <kbd id="hotkey-toggle">CTRL + F</kbd>
+      </div>
+      <div class="window-controls-group">
+        <button id="minimizeButton" class="window-control window-control-minimize" />
+        <button id="closeButton" class="window-control window-control-close" />
+      </div>
+    </header>
+
+    <!-- --------------------------------- Main -------------------------------- -->
+    <main>
+      <div id="other">
+        <h1>Saved!</h1>
+        <p id="infoParagraph">
+          Your website is loaded in!  When you finish your game, you should directed immediately to the window.
+        </p>
+      </div>
+    </main>
+
+    <script type="module" src="./in-game.js"></script>
+  </body>
+</html>

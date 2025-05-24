@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="../../css/general.css" />
+    <link rel="stylesheet" href="../../css/header.css" />
+    <link rel="stylesheet" href="../../css/desktop.css" />
+    <link rel="stylesheet" href="../../css/modal.css" />
+    <title>Study App Beta</title>
+  </head>
+  <body class="desktop">
+    <!-- -------------------------------- Header ------------------------------- -->
+
+    <header class="app-header">
+      <img src="../../img/desktop-icon.png" />
+      <h1>Study Overlay</h1>
+      <div class="window-controls-group">
+        <button id="minimizeButton" class="window-control window-control-minimize" />
+        <button id="maximizeButton" class="window-control window-control-maximize" />
+        <button id="closeButton" class="window-control window-control-close" />
+      </div>
+    </header>
+
+    <!-- --------------------------------- Main -------------------------------- -->
+    <main>
+      <div class="desktopBottom">
+        <!-- Launch a game! -->
+        <div id="left">
+          <h1>
+            We created a program that's going to help you boost your grades while you game!
+          </h1>
+        </div>
+        <!-- Launch a game! -->
+        <div id="middle">
+          How does this app work?
+          <br /><br />
+          Simple, just simply enter the URL link to the quizlet flashcard that you wish to study. Everytime you finish a game, you will automatically be sent to a practice test!
+          <br /><br />
+          Enter the URL below!
+          <br /><br />
+          <!-- input box for the website goes here-->
+          <input type="text" id="input-field"/>
+          <button onclick="saveUrl()">Save URL</button>
+        </div>
+        <!-- picture -->
+        <div id="right">
+          <div style="text-align: center">
+            <div style="display: inline-block">
+              <img src="../../img/Quizlet-Emblem.png" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script type="module" src="./desktop.js"></script>
+    <script>
+      function saveUrl() {
+        const input = document.getElementById("input-field");
+        const originalUrl = input.value;
+
+        // Match and extract base URL with numeric ID
+        const match = originalUrl.match(/^(https:\/\/quizlet\.com\/\d+)/);
+
+      if (match) {
+        const transformedUrl = `${match[1]}/test?`;
+
+        // Save it to the main window so other scripts can access
+        const mainWindow = overwolf.windows.getMainWindow();
+        mainWindow.websiteUrl = transformedUrl;
+
+        console.log("Transformed URL saved:", transformedUrl);
+      } else {
+          console.error("Invalid Quizlet URL:", originalUrl);
+        }
+      }   
+
+    </script>
+  </body>
+</html>

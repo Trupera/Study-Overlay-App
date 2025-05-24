@@ -1,0 +1,81 @@
+body {
+  display: flex;
+  flex-direction: column;
+  margin: 0px;
+  min-height: 100vh;
+  overflow: hidden;
+  font-size: 14px;
+  background-color: #f6f6f6;
+  color: #9BC786;
+}
+
+main {
+  flex: auto;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+a {
+  color: inherit;
+}
+
+
+.desktopTop h1 {
+  font-family: "Trebuchet", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  color: #AFA647;
+  margin-top: 40px;
+}
+
+.desktopTop p {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+  color: #AFA647;
+  font-size: 15px;
+  line-height: 20px;
+}
+
+
+.desktopBottom {
+  background-color: #676FC2;
+  width: 100%;
+  flex: 1;
+  display: flex;
+  padding: 67px 0px;
+}
+
+.desktopBottom > #left {
+  flex: 1 1 30%;
+}
+
+.desktopBottom > #left > h1 {
+  font-family: "Trebuchet", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  margin: 150px 57px;
+  color: #AFA647;
+}
+
+.desktopBottom > #middle {
+  flex: 1 1 40%;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  margin-top: 100px;
+  color: #AFA647;
+}
+
+.desktopBottom > #right {
+  flex: 1 1 30%;
+  margin-top: 150px;
+}
+
+#ad {
+  display: inline-block;
+  margin-right: 10px;
+}
